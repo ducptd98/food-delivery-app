@@ -1,0 +1,10 @@
+export enum RootActionEnum {
+  FIND_ALL = 'FIND_ALL',
+  FIND_ALL_AND_COUNT = 'FIND_ALL_AND_COUNT',
+  FIND_BY = 'FIND_BY',
+  FIND_BY_ID = 'FIND_BY_ID',
+  FIND_BY_IDS = 'FIND_BY_IDS',
+  SAVE = 'SAVE',
+  UPDATE = 'UPDATE',
+  DELETE = 'DELETE',
+}

@@ -1,0 +1,9 @@
+{
+  "name": "shared-prisma-clients",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/prisma-clients/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project shared-prisma-clients --web",
+  "targets": {}
+}
