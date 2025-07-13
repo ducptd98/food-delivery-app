@@ -9,4 +9,10 @@ export const env = cleanEnv(process.env, {
   CLOUDINARY_API_KEY: str(),
   CLOUDINARY_API_SECRET: str(),
   CLOUDINARY_FOLDER: str(),
+  RABBITMQ_ERLANG_COOKIE: str(),
+  RABBITMQ_DEFAULT_VHOST: str(),
+  RABBITMQ_DEFAULT_USER: str(),
+  RABBITMQ_DEFAULT_PASS: str(),
+  RABBITMQ_HOST: str(),
+  RABBITMQ_PORT: str(),
 });

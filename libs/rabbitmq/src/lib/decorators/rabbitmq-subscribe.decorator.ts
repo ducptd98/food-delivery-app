@@ -1,6 +1,7 @@
 import {
   RabbitSubscribe,
   RabbitHandlerConfig,
+  Nack,
 } from '@golevelup/nestjs-rabbitmq';
 import { RabbitHandler } from '../inteceptors/rabbitmq.interceptor';
 
@@ -27,7 +28,7 @@ export function RabbitSubscribeWithHandler<TInput>(
     const originalMethod = descriptor.value;
 
     if (!originalMethod) {
-      throw new Error('RabbitSubscribeWithHandler must decorate a method');
+      throw new Nack(false);
     }
 
     descriptor.value = function (this: any, ...args: any[]) {

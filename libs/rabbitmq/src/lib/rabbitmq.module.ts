@@ -1,12 +1,11 @@
-import { DynamicModule, Module } from '@nestjs/common';
 import {
   MessageHandlerErrorBehavior,
-  RabbitMQExchangeConfig,
   RabbitMQModule,
 } from '@golevelup/nestjs-rabbitmq';
+import { DynamicModule, Module } from '@nestjs/common';
+import { USER_EXCHANGES_CONFIG } from './constants/rabbitmq.constant';
 import { RabbitMqSubModule } from './rabbitmq-sub.module';
 import { RabbitmqProducer, RabbitMqService } from './services';
-import { rabbitMqConfig } from './rabbitmq.config';
 
 @Module({})
 export class RabbitMqModule {
@@ -21,7 +20,7 @@ export class RabbitMqModule {
           useFactory: async (rabbitService: RabbitMqService) => {
             return {
               ...rabbitService.getRabbitMqConfig(),
-              exchanges: rabbitMqConfig.exchanges,
+              exchanges: [...USER_EXCHANGES_CONFIG],
               defaultRpcErrorBehavior: MessageHandlerErrorBehavior.NACK,
               defaultSubscribeErrorBehavior: MessageHandlerErrorBehavior.NACK,
             };

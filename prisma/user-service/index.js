@@ -138,7 +138,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/Users/ducpham/Documents/MyWorkspace/test/food-delivery-app/prisma/user-service",
+      "value": "/Users/ducpham/Documents/MyWorkspace/food-delivery-app/prisma/user-service",
       "fromEnvVar": null
     },
     "config": {
@@ -152,11 +152,12 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "/Users/ducpham/Documents/MyWorkspace/test/food-delivery-app/apps/user-service/prisma/schema.prisma",
+    "sourceFilePath": "/Users/ducpham/Documents/MyWorkspace/food-delivery-app/apps/user-service/prisma/schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": null
+    "rootEnvPath": null,
+    "schemaEnvPath": "../../.env"
   },
   "relativePath": "../../apps/user-service/prisma",
   "clientVersion": "6.11.1",

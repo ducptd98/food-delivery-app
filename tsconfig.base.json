@@ -19,6 +19,7 @@
         "libs/auth/data-access/src/index.ts"
       ],
       "@food-delivery-app/auth-feature": ["libs/auth/feature/src/index.ts"],
+      "@food-delivery-app/auth-messaging": ["libs/messaging/auth/src/index.ts"],
       "@food-delivery-app/common": ["libs/common/src/index.ts"],
       "@food-delivery-app/entities": ["libs/shared/entities/src/index.ts"],
       "@food-delivery-app/prisma-client": [
@@ -31,6 +32,7 @@
         "libs/user/data-access/src/index.ts"
       ],
       "@food-delivery-app/user-feature": ["libs/user/feature/src/index.ts"],
+      "@food-delivery-app/user-messaging": ["libs/messaging/user/src/index.ts"],
       "@food-delivery-app/utils": ["libs/shared/utils/src/index.ts"]
     }
   },

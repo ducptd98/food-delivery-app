@@ -1,3 +1,4 @@
+import { AuthProducerService } from '@food-delivery-app/auth-messaging';
 import {
   SALT_ROUND,
   TransactionManagerService,
@@ -8,7 +9,6 @@ import {
   TPrismaTransaction,
   TToken,
 } from '@food-delivery-app/types';
-import { UserService } from '@food-delivery-app/user-data-access';
 import { BadRequestError, hashString } from '@food-delivery-app/utils';
 import { Injectable } from '@nestjs/common';
 import { JwtService } from './jwt.service';
@@ -16,8 +16,8 @@ import { JwtService } from './jwt.service';
 @Injectable()
 export class AuthService {
   constructor(
+    private authProducerService: AuthProducerService,
     private jwtService: JwtService,
-    private usersService: UserService,
     private transactionManagerService: TransactionManagerService
   ) {}
 
@@ -51,10 +51,16 @@ export class AuthService {
   // }
 
   public async register(request: any): Promise<TAccessToken> {
-    let user = await this.usersService.findByEmail(request.email);
-    if (user) {
-      throw new BadRequestError('user exists');
+    let { success, data: user } =
+      await this.authProducerService.findUserByEmail(request.email);
+    if (!success) {
+      throw new BadRequestError('Error while getting user by email');
     }
+
+    if (user) {
+      throw new BadRequestError('Email already exists');
+    }
+
     const passwordHash = hashString(request.password, SALT_ROUND);
 
     const handler = async (client: TPrismaTransaction) => {
@@ -88,7 +94,11 @@ export class AuthService {
       'user',
       handler
     );
-    return this.generateToken(user);
+    return {
+      accessToken: '',
+      refreshToken: '',
+    };
+    // return this.generateToken(user);
   }
 
   private async generateToken(user: User) {

@@ -1,19 +1,14 @@
 import { Injectable } from '@nestjs/common';
 import { RabbitmqConstant } from '../constants/rabbitmq.constant';
 import { RabbitMQConfig } from '@golevelup/nestjs-rabbitmq';
+import { env } from '@food-delivery-app/utils';
 
 @Injectable()
 export class RabbitMqService {
   constructor() {}
 
   public getRabbitMqConfig(): RabbitMQConfig {
-    const uri = `amqp://${
-      process.env[RabbitmqConstant.RABBITMQ_DEFAULT_USER]
-    }:${process.env[RabbitmqConstant.RABBITMQ_DEFAULT_PASS]}@${
-      process.env[RabbitmqConstant.RABBITMQ_HOST]
-    }:${process.env[RabbitmqConstant.RABBITMQ_PORT]}${
-      process.env[RabbitmqConstant.RABBITMQ_DEFAULT_VHOST]
-    }`;
+    const uri = `amqp://${env.RABBITMQ_DEFAULT_USER}:${env.RABBITMQ_DEFAULT_PASS}@${env.RABBITMQ_HOST}:${env.RABBITMQ_PORT}/${env.RABBITMQ_DEFAULT_VHOST}`;
     console.log('-> uri', uri);
     return {
       uri,
