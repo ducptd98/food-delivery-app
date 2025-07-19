@@ -29,9 +29,11 @@
       "@food-delivery-app/rabbitmq": ["libs/rabbitmq/src/index.ts"],
       "@food-delivery-app/types": ["libs/shared/types/src/index.ts"],
       "@food-delivery-app/user-data-access": [
-        "libs/user/data-access/src/index.ts"
+        "libs/user-service/user/data-access/src/index.ts"
       ],
-      "@food-delivery-app/user-feature": ["libs/user/feature/src/index.ts"],
+      "@food-delivery-app/user-feature": [
+        "libs/user-service/user/feature/src/index.ts"
+      ],
       "@food-delivery-app/user-messaging": ["libs/messaging/user/src/index.ts"],
       "@food-delivery-app/utils": ["libs/shared/utils/src/index.ts"]
     }
