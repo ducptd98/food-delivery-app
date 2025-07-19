@@ -21,12 +21,20 @@
       "@food-delivery-app/auth-feature": ["libs/auth/feature/src/index.ts"],
       "@food-delivery-app/auth-messaging": ["libs/messaging/auth/src/index.ts"],
       "@food-delivery-app/common": ["libs/common/src/index.ts"],
-      "@food-delivery-app/entities": ["libs/shared/entities/src/index.ts"],
       "@food-delivery-app/prisma-client": [
         "libs/shared/prisma-clients/src/index.ts"
       ],
+      "@food-delivery-app/prisma-restaurant-service": [
+        "prisma/restaurant-service"
+      ],
       "@food-delivery-app/prisma-user-service": ["prisma/user-service"],
       "@food-delivery-app/rabbitmq": ["libs/rabbitmq/src/index.ts"],
+      "@food-delivery-app/restaurant-data-access": [
+        "libs/restaurant-service/restaurant/data-access/src/index.ts"
+      ],
+      "@food-delivery-app/restaurant-feature": [
+        "libs/restaurant-service/restaurant/feature/src/index.ts"
+      ],
       "@food-delivery-app/types": ["libs/shared/types/src/index.ts"],
       "@food-delivery-app/user-data-access": [
         "libs/user-service/user/data-access/src/index.ts"

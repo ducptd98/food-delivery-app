@@ -1,0 +1,9 @@
+{
+  "name": "restaurant-service/restaurant-data-access",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/restaurant-service/restaurant/data-access/src",
+  "projectType": "library",
+  "tags": ["type:data-access"],
+  "// targets": "to see all targets run: nx show project restaurant-service/restaurant-data-access --web",
+  "targets": {}
+}

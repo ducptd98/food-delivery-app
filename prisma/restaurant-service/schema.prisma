@@ -1,0 +1,24 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../../prisma/restaurant-service"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Restaurant {
+  id          Int      @id() @default(autoincrement())
+  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamp(6)
+  updatedAt   DateTime @default(now()) @map("updated_at") @db.Timestamp(6)
+  createdBy   Int?     @map("created_by")
+  updatedBy   Int?     @map("updated_by")
+  email       String   @unique() @map("email") @db.VarChar
+  phoneNumber String   @map("phone_number")
+  name        String   @map("name") @db.VarChar
+  address     String   @map("address") @db.Text
+  avatarUrl   String?  @map("avatar_url")
+
+  @@map("restaurant")
+}

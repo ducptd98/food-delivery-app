@@ -4,8 +4,11 @@
   "license": "MIT",
   "scripts": {
     "prisma:generate:user-service": "prisma generate --schema=apps/user-service/schema.prisma",
+    "prisma:generate:restaurant-service": "prisma generate --schema=apps/restaurant-service/schema.prisma",
     "user-service:db:push": "prisma generate --schema=apps/user-service/schema.prisma",
     "user-service:migrate": "prisma migrate dev --schema=apps/user-service/schema.prisma",
+    "restaurant-service:db:push": "prisma generate --schema=apps/restaurant-service/schema.prisma",
+    "restaurant-service:migrate": "prisma migrate dev --schema=apps/restaurant-service/schema.prisma",
     "generate:nest:lib": "node ./tools/scripts/generate-nest-lib.js",
     "serve:user-service": "nx serve user-service",
     "serve:auth-service": "nx serve auth-service"
